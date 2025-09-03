@@ -1,0 +1,117 @@
+.navbar {
+  background-color: white !important;
+  color: black !important;
+}
+
+.navbar .nav-link {
+  color: black !important;
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.navbar .nav-link:hover {
+  border-bottom: 2px solid black;
+}
+
+.navbar .navbar-brand {
+  color: black !important;
+  font-size: 25px;
+}
+
+.navbar .navbar-brand:hover {
+  color: #8bdbb9 !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 992px) {
+  .custom-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 1050;
+  }
+
+  .collapse.show.custom-sidebar {
+    transform: translateX(0);
+  }
+
+  @media (max-width: 768px) {
+    .custom-sidebar {
+      width: 200px;
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .custom-sidebar {
+      width: 180px;
+      padding: 10px;
+    }
+  }
+
+  .navbar-toggler {
+    z-index: 1100;
+  }
+}
+
+.user_icon {
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(135deg, #fff, #fff);
+  color: rgb(8, 7, 7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.user_icon:hover {
+  background: linear-gradient(135deg, #eae8ec, #8bdbb9);
+}
+
+.user_options {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  z-index: 1000;
+}
+
+.cart_icon {
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(135deg, #fff, #fff);
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart_icon:hover {
+  background: linear-gradient(135deg, #eae8ec, #8bdbb9);
+}

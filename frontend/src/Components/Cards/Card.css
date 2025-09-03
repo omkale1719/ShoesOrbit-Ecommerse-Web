@@ -1,0 +1,51 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+
+.wishlist-button {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.heartBtn {
+  border: none;
+  background: none;
+  padding: 6px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.heartIcon {
+  color: #ccc;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.heartBtn:hover .heartIcon {
+  color: red;
+  transform: scale(1.2);
+}
+
+.heartBtn:hover {
+  animation: bounce 0.2s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

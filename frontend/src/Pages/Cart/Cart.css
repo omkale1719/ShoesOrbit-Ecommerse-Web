@@ -1,0 +1,142 @@
+/* Container styling */
+.cart_container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Table Wrapper with Scroll */
+.table-wrapper {
+  max-height: 650px;       /* limit height */
+  overflow-y: auto;        /* enable vertical scroll */
+  overflow-x: auto;        /* allow horizontal scroll on small screens */
+  border-radius: 10px;
+}
+
+/* Custom Scrollbar (nice look) */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #198754; /* green scrollbar */
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/* Heading styling */
+h2 {
+  color: #198754; /* Bootstrap text-success green */
+  font-weight: 700;
+}
+
+/* Empty cart message */
+h3 {
+  color: #198754;
+  font-weight: 500;
+}
+
+/* Table styling */
+table {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background-color: #198754;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  color: #333;
+}
+
+/* Hover effect for rows */
+.table tbody tr:hover {
+  background-color: #e6f4ea;
+  transition: 0.3s;
+}
+
+/* Image styling */
+table img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Buttons */
+.btn {
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+/* Total row styling */
+.table-info {
+  background-color: #d1e7dd !important; /* Light success background */
+  color: #0f5132;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  table th,
+  table td {
+    font-size: 0.85rem;
+    padding: 8px 5px;
+  }
+
+  .btn{
+    padding: 5px 8px;
+    font-size: 0.85rem;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
