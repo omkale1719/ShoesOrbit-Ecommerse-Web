@@ -1,43 +1,45 @@
+.marquee-container {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #1a1f71;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-size: 1.5em;
+  color: #1a1f71;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+}
 
-        .marquee-container {
-            background-color: white;
-            overflow: hidden;
-            position: relative;
-            background-size: cover; 
-            background-position: center; 
-            border: 2px solid #1a1f71; 
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            font-size: 1.5em;
-            color: #1a1f71;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease-in-out;
-        }
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
 
-        .marquee {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+.marquee-container:hover {
+  background-color: #ff8c00;
+  color: white;
+  border-color: #ff8c00;
+}
 
-        .marquee-container:hover {
-            background-color: #ff8c00; 
-            color: white; 
-            border-color: #ff8c00; 
-        }
+.marquee-container:hover .marquee {
+  animation-play-state: paused;
+}
 
-        .marquee-container:hover .marquee {
-            animation-play-state: paused;
-        }
-
-        .highlight {
-            color: #ff5722; 
-        }
-   
+.highlight {
+  color: #ff5722;
+}

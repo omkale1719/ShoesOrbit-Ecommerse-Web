@@ -129,7 +129,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
             />
           </div>
 
-          {/* Payment */}
+          
           <div className="section">
             <h3>Payment</h3>
             <select
@@ -144,7 +144,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
             </select>
           </div>
 
-          {/* Place Order */}
+          
           <button className="place-btn" onClick={HandleCheckoutOrder}>
             Place Order
           </button>

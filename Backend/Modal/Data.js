@@ -9,7 +9,7 @@ const shoeSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ["Kids", "New Arrival", "Women's", "Men's", "Bestsellers"] // customize categories
+    enum: ["Kids", "New Arrival", "Women's", "Men's", "Bestsellers"]
   },
   description: {
     type: String,

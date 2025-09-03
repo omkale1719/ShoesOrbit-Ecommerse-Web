@@ -168,7 +168,10 @@ router.post("/checkout", async (req, res) => {
 
 router.post("/wishlist", async (req, res) => {
   try {
-    const userId = await Wishlist.findOne({  id: req.body.id,user: req.body.user });
+    const userId = await Wishlist.findOne({
+      id: req.body.id,
+      user: req.body.user,
+    });
     // console.log("userId",userId)
     // console.log("{ id: req.body.id }",{ id: req.body.id })
     if (!userId) {

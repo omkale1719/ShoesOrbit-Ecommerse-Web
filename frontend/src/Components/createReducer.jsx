@@ -23,8 +23,8 @@ const Reducer = (state, action) => {
       return newArr;
 
     case "DROP":
-        let NewArr=[];
-        return NewArr; 
+      let NewArr = [];
+      return NewArr;
 
     default:
       console.log("error in reducer!");

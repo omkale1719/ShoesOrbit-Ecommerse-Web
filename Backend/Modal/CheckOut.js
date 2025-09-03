@@ -1,4 +1,4 @@
-// models/Order.js
+
 const mongoose = require("mongoose");
 
 const checkout = new mongoose.Schema({
@@ -21,12 +21,12 @@ const checkout = new mongoose.Schema({
   mobile: {
     type: String,
     required: true,
-    match: /^[0-9]{10}$/  // only 10-digit mobile numbers
+    match: /^[0-9]{10}$/  
   },
   pincode: {
     type: String,
     required: true,
-    match: /^[0-9]{6}$/  // only 6-digit pincode
+    match: /^[0-9]{6}$/ 
   },
   payment_method: {
     type: String,
@@ -42,7 +42,7 @@ const checkout = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: String,   // Storing as string like "Fri Aug 30 2025"
+    type: String,   
     default: new Date().toDateString(),
   },
   order_data: {

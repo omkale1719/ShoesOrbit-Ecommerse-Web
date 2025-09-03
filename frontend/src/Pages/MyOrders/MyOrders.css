@@ -1,11 +1,11 @@
-/* Page container */
+
 .container {
   margin-top: 30px;
 }
 
-/* Order date section */
+
 .order-date {
-  background: linear-gradient(135deg, #198754, #28a745); /* success gradient */
+  background: linear-gradient(135deg, #198754, #28a745); 
   color: #fff;
   padding: 10px 15px;
   border-radius: 8px;
@@ -15,7 +15,7 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Card styles */
+
 .card {
   border: none;
   border-radius: 12px;
@@ -29,7 +29,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Card image */
+
 .card img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -37,7 +37,7 @@
   object-fit: cover;
 }
 
-/* Card body */
+
 .card-body {
   padding: 12px 15px;
 }
@@ -49,7 +49,7 @@
   margin-bottom: 10px;
 }
 
-/* Product info */
+
 .card-body span {
   display: inline-block;
   background: #e6f4ea;
@@ -61,7 +61,7 @@
   font-weight: 500;
 }
 
-/* Responsive grid fix */
+
 @media (max-width: 768px) {
   .card {
     width: 100% !important;

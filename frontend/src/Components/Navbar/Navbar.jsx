@@ -176,7 +176,9 @@ export const Navbar = () => {
                           cursor: "pointer",
                           color: "black",
                         }}
-                        onClick={() => alert("Setting Page is Under Construction!")}
+                        onClick={() =>
+                          alert("Setting Page is Under Construction!")
+                        }
                       >
                         Settings
                       </li>

@@ -1,16 +1,16 @@
-/* Overlay background */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* darker overlay for focus */
+  background: rgba(0, 0, 0, 0.5); 
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
   z-index: 99;
-  backdrop-filter: blur(3px); /* soft blur for modern feel */
+  backdrop-filter: blur(3px); 
 }
 
 .overlay.show {
@@ -18,18 +18,18 @@
   visibility: visible;
 }
 
-/* Drawer panel */
+
 .drawer {
   position: fixed;
   top: 0;
-  right: -500px; /* start hidden */
+  right: -500px; 
   width: 450px;
   max-width: 90%;
   height: 100%;
   background: #ffffff;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px 0 0 10px;
-  transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* smooth slide */
+  transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   right: 0;
 }
 
-/* Header */
+
 .drawer-header {
   display: flex;
   justify-content: space-between;
@@ -75,7 +75,7 @@
   background: #e60000;
 }
 
-/* Content */
+
 .drawer-content {
   padding: 25px;
   flex: 1;
@@ -105,7 +105,7 @@ p {
   margin: 2px 0;
 }
 
-/* Stylish input fields */
+
 input,
 select {
   width: 100%;
@@ -115,25 +115,25 @@ select {
   border-radius: 10px;
   outline: none;
   font-size: 15px;
-  background: #ecf0ef; /* light background instead of dark */
-  color: #333; /* dark text for readability */
+  background: #ecf0ef; 
+  color: #333; 
   transition: all 0.3s ease-in-out;
   box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
 }
 
 input::placeholder,
 select::placeholder {
-  color: #aaa; /* softer placeholder text */
+  color: #aaa; 
 }
 
 input:focus,
 select:focus {
   border-color: #007bff;
-  background: #fff; /* highlight on focus */
+  background: #fff; 
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Place Order Button */
+
 .place-btn {
   width: 100%;
   padding: 14px 0;
@@ -154,7 +154,7 @@ select:focus {
   box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
 }
 
-/* Scrollbar Styling for Drawer */
+
 .drawer-content::-webkit-scrollbar {
   width: 6px;
 }
@@ -168,7 +168,7 @@ select:focus {
   background: #f0f0f0;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .drawer {
     width: 90%;

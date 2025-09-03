@@ -156,7 +156,7 @@ export const Card = (props) => {
             </select>
           </div>
 
-          {/* Price + Button */}
+        
           <div className="d-flex justify-content-between align-items-center mt-3">
             <div className="fs-6 fw-bold text-success">₹ {finalprice}</div>
             <>
