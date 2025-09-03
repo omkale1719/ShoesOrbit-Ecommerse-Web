@@ -13,7 +13,7 @@ export const Home = () => {
   const [search, setsearch] = useState("");
 
   const LoadData = async () => {
-    let response = await fetch("http://localhost:5000/api/displayData", {
+    let response = await fetch("https://shoesorbit-ecommerse-web.onrender.com/api/displayData", {
       method: "Post",
       headers: {
         "Content-Type": "application/json",

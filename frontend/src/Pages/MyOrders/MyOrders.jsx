@@ -9,7 +9,7 @@ export const MyOrders = () => {
   const fetchOrders = async () => {
     try {
       let response = await axios.post(
-        "http://localhost:5000/api/display_orders",
+        "https://shoesorbit-ecommerse-web.onrender.com/api/display_orders",
         { email: localStorage.getItem("userEmail") }
       );
       console.log(response.data);

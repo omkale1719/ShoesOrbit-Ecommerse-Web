@@ -47,7 +47,7 @@ export const Card = (props) => {
 
   const HandleWishlist = async () => {
     try {
-      let response = await axios.post("http://localhost:5000/api/wishlist", {
+      let response = await axios.post("https://shoesorbit-ecommerse-web.onrender.com/api/wishlist", {
         user: localStorage.getItem("userEmail"),
         id: props.cardShoesItem._id,
         title: props.cardShoesItem.title,

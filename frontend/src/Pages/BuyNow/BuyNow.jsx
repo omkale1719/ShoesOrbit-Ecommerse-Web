@@ -22,7 +22,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
 
   const HandleCheckoutOrder = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/checkout", {
+      const response = await axios.post("https://shoesorbit-ecommerse-web.onrender.com/api/checkout", {
         email: localStorage.getItem("userEmail"),
         customer_name: userInput.name,
         customer_address: userInput.address,
@@ -38,7 +38,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
       console.log(response.data);
       if (response.status === 200) {
         const orderResponse = await axios.post(
-          "http://localhost:5000/api/orders",
+          "https://shoesorbit-ecommerse-web.onrender.com/api/orders",
           {
             email: localStorage.getItem("userEmail"),
             order_data: data,
