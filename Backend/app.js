@@ -19,6 +19,10 @@ Mongodb();
 app.get("/", (req, res) => {
   res.send("Hello, Backend is running 🚀");
 });
+app.get("/hello", (req, res) => {
+  res.send("Hello,  🚀");
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
