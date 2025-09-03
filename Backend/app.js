@@ -23,6 +23,9 @@ Mongodb();
 app.get("/", (req, res) => {
   res.send("Hello, Backend is running 🚀");
 });
+app.get("/hello", (req, res) => {
+  res.send("this is new route 🚀");
+});
 
 // Start server
 app.listen(PORT, () => {
