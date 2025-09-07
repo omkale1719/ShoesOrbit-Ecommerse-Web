@@ -11,7 +11,6 @@ import Modal from "../../../Modal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export const Card = (props) => {
   const [liked, setLiked] = useState(false);
   const [open, setOpen] = useState(false);
@@ -47,7 +46,7 @@ export const Card = (props) => {
 
   const HandleWishlist = async () => {
     try {
-      let response = await axios.post("https://shoesorbit-ecommerse-web.onrender.com/api/wishlist", {
+      let response = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/wishlist`, {
         user: localStorage.getItem("userEmail"),
         id: props.cardShoesItem._id,
         title: props.cardShoesItem.title,
@@ -64,7 +63,7 @@ export const Card = (props) => {
 
   return (
     <>
-      <div className="card " style={{  margin: "1rem" }}>
+      <div className="card " style={{ margin: "1rem" }}>
         {localStorage.getItem("authToken") ? (
           <div
             className="wishlist-button position-absolute"
@@ -111,15 +110,8 @@ export const Card = (props) => {
 
         <img
           src={props.cardShoesItem.image}
-          className="card-img-top"
+          className="card-img-top "
           alt={props.cardShoesItem.title}
-          style={{
-            height: "200px",
-            objectFit: "cover",
-            borderTopLeftRadius: "0.5rem",
-            borderTopRightRadius: "0.5rem",
-            width: "100%",
-          }}
         />
 
         <div className="card-body  d-flex flex-column">
@@ -156,20 +148,19 @@ export const Card = (props) => {
             </select>
           </div>
 
-        
           <div className="d-flex justify-content-between align-items-center mt-3">
             <div className="fs-6 fw-bold text-success">₹ {finalprice}</div>
             <>
               {localStorage.getItem("authToken") ? (
-                
+                <div>
                   <button
                     onClick={HandleAdd_to_Cart}
                     className="btn btn-success btn-sm px-3"
                   >
-                    Add To Cart <ToastContainer />
+                    Add To Cart
                   </button>
                  
-               
+                </div>
               ) : (
                 <>
                   <button

@@ -8,6 +8,7 @@ import { CartProvider } from "./Components/createReducer";
 import { BuyNow } from "./Pages/BuyNow/BuyNow";
 import { Wishlist } from "./Pages/Wishlist/Wishlist.jsx";
 import { MyOrders } from "./Pages/MyOrders/MyOrders.jsx";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/display_orders" element={ <MyOrders/>} />
           <Route path="/wishlist" element={ <Wishlist/>} />
         </Routes>
+         <ToastContainer/>
       </Router>
     </CartProvider>
   );

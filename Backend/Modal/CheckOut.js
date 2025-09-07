@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const checkout = new mongoose.Schema({
@@ -30,8 +29,8 @@ const checkout = new mongoose.Schema({
   },
   payment_method: {
     type: String,
-    enum: ["UPI", "Credit Card", "Debit Card", "Cash on Delivery"],
-    // required: true,
+    enum: ["UPI", "Cash on Delivery"],
+    required: true,
   },
   No_of_orders: {
     type: Number,

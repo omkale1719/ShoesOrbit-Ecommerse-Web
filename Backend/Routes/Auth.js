@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
@@ -8,6 +9,9 @@ const Order = require("../Modal/Order");
 const CheckOut = require("../Modal/CheckOut");
 const Wishlist = require("../Modal/Wishlist");
 const SecreateKey = "Om_kale";
+const Razorpay = require("razorpay");
+const crypto = require("crypto");
+const Payment = require("../Modal/Payment");
 
 router.post(
   "/signup",
@@ -212,6 +216,67 @@ router.post("/wishlist_remove/:id", async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.log(error);
+  }
+});
+
+const RazorpayInstance = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET,
+});
+
+router.post("/payment", (req, res) => {
+  const { amount } = req.body;
+  try {
+    const options = {
+      amount: Number(amount) * 100,
+      currency: "INR",
+      receipt: crypto.randomBytes(10).toString("hex"),
+    };
+
+    RazorpayInstance.orders.create(options, (error, order) => {
+      if (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Something went wrong!" });
+      }
+      res.status(200).json({ data: order });
+      console.log(order);
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error!" });
+    console.log(error);
+  }
+});
+
+router.post("/verify", async (req, res) => {
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+    req.body;
+
+  try {
+    const sign = razorpay_order_id + "|" + razorpay_payment_id;
+
+    const expectedSign = crypto
+      .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
+      .update(sign.toString())
+      .digest("hex");
+
+    const isAuthentic = expectedSign === razorpay_signature;
+
+    if (isAuthentic) {
+      const payment = new Payment({
+        razorpay_order_id,
+        razorpay_payment_id,
+        razorpay_signature,
+      });
+
+      await payment.save();
+
+      res.status(200).json({ message: "Payment verified successfully" });
+    } else {
+      res.status(400).json({ message: "Invalid signature" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 

@@ -1,20 +1,17 @@
-
 .cart_container {
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: white;
 }
-
-
 
 .table-wrapper {
-  max-height: 650px;      
-  overflow-y: auto;        
-  overflow-x: auto;        
+  max-height: 650px;
+  overflow-y: auto;
+  overflow-x: auto;
   border-radius: 10px;
 }
-
 
 .table-wrapper::-webkit-scrollbar {
   width: 8px;
@@ -22,7 +19,7 @@
 }
 
 .table-wrapper::-webkit-scrollbar-thumb {
-  background: #198754; 
+  background: #198754;
   border-radius: 10px;
 }
 
@@ -30,19 +27,15 @@
   background: #f1f1f1;
 }
 
-
-
 h2 {
-  color: #198754; 
+  color: #198754;
   font-weight: 700;
 }
-
 
 h3 {
   color: #198754;
   font-weight: 500;
 }
-
 
 table {
   background-color: #ffffff;
@@ -67,18 +60,15 @@ table {
   color: #333;
 }
 
-
 .table tbody tr:hover {
   background-color: #e6f4ea;
   transition: 0.3s;
 }
 
-
 table img {
   border-radius: 8px;
   border: 1px solid #ddd;
 }
-
 
 .btn {
   font-weight: 500;
@@ -114,29 +104,114 @@ table img {
   background-color: #157347;
 }
 
-
 .table-info {
-  background-color: #d1e7dd !important; 
+  background-color: #d1e7dd !important;
   color: #0f5132;
   font-size: 1rem;
 }
 
 
-@media (max-width: 768px) {
-  table th,
-  table td {
-    font-size: 0.85rem;
-    padding: 8px 5px;
+@media (max-width: 992px) {
+  .cart_container h2 {
+    font-size: 1.5rem;
   }
 
-  .btn{
-    padding: 5px 8px;
-    font-size: 0.85rem;
+  .cart_container table th,
+  .cart_container table td {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
-  img {
+  .cart_container img {
     width: 50px;
     height: 50px;
   }
 }
 
+
+@media (max-width: 768px) {
+  .cart_container {
+    padding: 10px;
+  }
+
+  .cart_container h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .cart_container table {
+    font-size: 0.8rem;
+  }
+
+  .cart_container img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .total_price td {
+    font-size: 0.9rem;
+  }
+
+  .cart_container .btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .cart_container {
+    width: 120%;
+    max-height: none; 
+    overflow-y: visible;
+  }
+
+  .cart_container table,
+  .cart_container thead {
+    font-size: 0.75rem;
+  }
+
+  .cart_container img {
+    width: 35px;
+    height: 35px;
+  }
+
+  
+  .cart_container .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart_container .btn {
+    width: 100%;
+  }
+}
+
+
+
+.cross_button {
+  color: red;
+  border-radius: 50%;
+  background: none;
+  position: absolute;
+  bottom: 175px;
+  left: 90%;                 
+  transform: translateX(-50%);
+}
+
+
+@media (max-width: 400px) {
+  .qty-size, 
+  .card-title,
+  .price {
+    font-size: 8px !important;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 542px) {
+  .qty-size, 
+  .card-title,
+  .price {
+    font-size: 11px !important;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Modal from "../../Modal";
 import { Login } from "./Login";
+import { toast } from "react-toastify";
 
 export const SignUp = ({ onClose }) => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const SignUp = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("https://shoesorbit-ecommerse-web.onrender.com/api/signup", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_HOST_URL}/signup`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -36,14 +37,20 @@ export const SignUp = ({ onClose }) => {
     console.log("json_data:", json);
 
     if (!json.success) {
-      alert("Enter Valid Creadentials!");
+      toast.error("Try With Correct Creadentials!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
     }
 
     if (json.success) {
       localStorage.setItem("userEmail", creadential.email);
       localStorage.setItem("authToken", json.authToken);
       console.log(localStorage.getItem("authToken"));
-
+      toast.success(`Welcome ${creadential.email} in ShoesOrbit...`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
       onClose();
       navigate("/");
     }

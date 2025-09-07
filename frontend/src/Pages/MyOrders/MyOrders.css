@@ -33,7 +33,7 @@
 .card img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  height: 200px !important;
+
   object-fit: cover;
 }
 
@@ -61,30 +61,3 @@
   font-weight: 500;
 }
 
-
-@media (max-width: 768px) {
-  .card {
-    width: 100% !important;
-    max-width: 100%;
-  }
-
-  .card img {
-    height: 130px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .order-date {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  .card-title {
-    font-size: 0.95rem;
-  }
-
-  .card-body span {
-    font-size: 0.8rem;
-    padding: 3px 6px;
-  }
-}

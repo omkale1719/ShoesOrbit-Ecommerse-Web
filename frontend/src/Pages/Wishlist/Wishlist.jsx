@@ -8,7 +8,7 @@ export const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
   const currentUser=localStorage.getItem("userEmail");
   const wishlistData = async () => {
-    const response = await fetch(`https://shoesorbit-ecommerse-web.onrender.com/api/wishlist/${currentUser}`);
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_HOST_URL}/wishlist/${currentUser}`);
     const data = await response.json();
     setWishlist(data);
   };
@@ -17,7 +17,7 @@ export const Wishlist = () => {
     try {
       console.log("item_id:", item_id);
       const res = await axios.post(
-        `https://shoesorbit-ecommerse-web.onrender.com/api/wishlist_remove/${item_id}`,
+        `${import.meta.env.VITE_BACKEND_HOST_URL}/wishlist_remove/${item_id}`,
         {}
       );
       console.log(res.data);

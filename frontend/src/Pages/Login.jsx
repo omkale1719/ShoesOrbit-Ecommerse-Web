@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SignUp } from "./SignUp";
 import Modal from "../../Modal";
+import { toast } from "react-toastify";
 
 export const Login = ({ onClose }) => {
   const [cartView, setCartView] = useState(false);
@@ -12,27 +13,39 @@ export const Login = ({ onClose }) => {
     // console.log(
     //   JSON.stringify({ email: userlogin.email, password: userlogin.password })
     // );
-    const responce = await fetch("https://shoesorbit-ecommerse-web.onrender.com/api/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email: userlogin.email,
-        password: userlogin.password,
-      }),
-    });
+    const responce = await fetch(
+      `${import.meta.env.VITE_BACKEND_HOST_URL}/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userlogin.email,
+          password: userlogin.password,
+        }),
+      }
+    );
     const json = await responce.json();
     console.log(json);
 
-    if (!json.success) alert("Enter Correct Credientials...!");
+    if (!json.success) {
+      toast.error("Try With Correct Credentials!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    }
 
     if (json.success) {
       localStorage.setItem("userEmail", userlogin.email);
       localStorage.setItem("authToken", json.AuthToken);
-    console.log(localStorage.getItem("authToken"));
-    onClose();
-    navigate("/");
+      console.log(localStorage.getItem("authToken"));
+      toast.success("Login Successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+      onClose();
+      navigate("/");
     }
   };
 
