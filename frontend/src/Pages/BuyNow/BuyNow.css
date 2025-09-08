@@ -21,7 +21,7 @@
 
 .drawer {
   position: fixed;
-  top: 0;
+  top:0;
   right: -500px; 
   width: 450px;
   max-width: 90%;

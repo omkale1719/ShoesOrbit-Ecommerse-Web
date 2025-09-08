@@ -10,6 +10,7 @@ export default function Cart() {
   const cart = useCart();
   const dispatch = useCartDispatch();
 
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 542);
     window.addEventListener("resize", handleResize);
