@@ -15,7 +15,7 @@ export const Home = () => {
 
   const LoadData = async () => {
     let response = await fetch(
-      `${import.meta.env.VITE_BACKEND_HOST_URL}/displayData`,
+      `${import.meta.env.VITE_BACKEND_HOST_URL}/api/displayData`,
       {
         method: "Post",
         headers: {
