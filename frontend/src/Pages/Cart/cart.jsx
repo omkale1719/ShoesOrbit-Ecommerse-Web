@@ -10,7 +10,6 @@ export default function Cart() {
   const cart = useCart();
   const dispatch = useCartDispatch();
 
-
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 542);
     window.addEventListener("resize", handleResize);
@@ -117,8 +116,8 @@ export default function Cart() {
           <div
             className="row"
             style={{
-              maxHeight: "550px", 
-              overflowY: "auto", 
+              maxHeight: "550px",
+              overflowY: "auto",
             }}
           >
             {cart.map((item, index) => (
@@ -142,9 +141,7 @@ export default function Cart() {
                       color: "var(--bs-card-color)",
                     }}
                   >
-                    <h5 className="card-title " >
-                      {item.title}
-                    </h5>
+                    <h5 className="card-title ">{item.title}</h5>
                     <p className=" qty-size">
                       <span className="me-3">Size: {item.size}</span>
                       <span>Qty: {item.qty}</span>
@@ -164,22 +161,23 @@ export default function Cart() {
 
           {/* Total & Checkout */}
           <div className=" justify-content-between align-items-center mt-4 p-3 bg-dark text-white rounded">
-            <h4 style={{fontSize:"15px", justifyContent:"center"}}>Total: ₹ {totalPrice}</h4>
-           
-              <div className="d-flex mt-2 ">
+            <h4 style={{ fontSize: "15px", justifyContent: "center" }}>
+              Total: ₹ {totalPrice}
+            </h4>
 
-
-            
+            <div className="d-flex mt-2 ">
               <button
-                className="btn btn-warning me-2 " 
+                className="btn btn-warning me-2 "
                 onClick={() => dispatch({ type: "DROP" })}
               >
                 Clear Cart
               </button>
-              <button className="btn btn-success " onClick={() => setOpen(true)}>
+              <button
+                className="btn btn-success "
+                onClick={() => setOpen(true)}
+              >
                 Proceed to Checkout
               </button>
-             
             </div>
           </div>
 
