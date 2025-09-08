@@ -15,7 +15,7 @@ export const Home = () => {
 
   const LoadData = async () => {
     let response = await fetch(
-      `${import.meta.env.VITE_BACKEND_HOST_URL}/api/displayData`,
+      `https://shoesorbit-ecommerse-web-2.onrender.com/api/displayData`,
       {
         method: "Post",
         headers: {
