@@ -35,7 +35,7 @@ export const BuyNow2 = ({ isOpen, onClose, product }) => {
   const HandleCheckoutOrder = async () => {
     try {
       const response = await axios.post(
-        "https://shoesorbit-ecommerse-web-2.onrender.com/api/checkout",
+        `${import.meta.env.VITE_BACKEND_HOST_URL}/checkout`,
         {
           email: localStorage.getItem("userEmail"),
           customer_name: userInput.name,
@@ -53,7 +53,7 @@ export const BuyNow2 = ({ isOpen, onClose, product }) => {
 
       if (response.status === 200) {
         const orderResponse = await axios.post(
-         "https://shoesorbit-ecommerse-web-2.onrender.com/api/payment",
+          `${import.meta.env.VITE_BACKEND_HOST_URL}/payment`,
           {
             email: localStorage.getItem("userEmail"),
             order_data: [product],
@@ -78,7 +78,7 @@ export const BuyNow2 = ({ isOpen, onClose, product }) => {
   const handlePayment = async () => {
     try {
       const res = await fetch(
-        "https://shoesorbit-ecommerse-web-2.onrender.com/api/payment",
+        `${import.meta.env.VITE_BACKEND_HOST_URL}/payment`,
         {
           method: "POST",
           headers: { "content-type": "application/json" },
