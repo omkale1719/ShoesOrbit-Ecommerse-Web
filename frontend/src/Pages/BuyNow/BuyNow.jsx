@@ -28,7 +28,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
 
   const HandleCheckoutOrder = async () => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/checkout`, {
+      const response = await axios.post("https://shoesorbit-ecommerse-web-2.onrender.com/api/checkout", {
         email: localStorage.getItem("userEmail"),
         customer_name: userInput.name,
         customer_address: userInput.address,
@@ -44,7 +44,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
       console.log(response.data);
       if (response.status === 200) {
         const orderResponse = await axios.post(
-          `${import.meta.env.VITE_BACKEND_HOST_URL}/orders`,
+        "https://shoesorbit-ecommerse-web-2.onrender.com/api/orders",
           {
             email: localStorage.getItem("userEmail"),
             order_data: data,
@@ -76,7 +76,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
 
   const handlePayment = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_HOST_URL}/payment`, {
+      const res = await fetch("https://shoesorbit-ecommerse-web-2.onrender.com/api/payment", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -111,7 +111,7 @@ export const BuyNow = ({ isOpen, onClose }) => {
         // alert(response.razorpay_payment_id);
 
         try {
-          const res = await fetch(`${import.meta.env.VITE_BACKEND_HOST_URL}/verify`, {
+          const res = await fetch("https://shoesorbit-ecommerse-web-2.onrender.com/api/verify", {
             method: "POST",
             headers: {
               "content-type": "application/json",

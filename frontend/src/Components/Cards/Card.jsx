@@ -46,7 +46,7 @@ export const Card = (props) => {
 
   const HandleWishlist = async () => {
     try {
-      let response = await axios.post(`${import.meta.env.VITE_BACKEND_HOST_URL}/wishlist`, {
+      let response = await axios.post("https://shoesorbit-ecommerse-web-2.onrender.com/api/wishlist", {
         user: localStorage.getItem("userEmail"),
         id: props.cardShoesItem._id,
         title: props.cardShoesItem.title,
