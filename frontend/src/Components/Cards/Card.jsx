@@ -10,8 +10,10 @@ import { Login } from "../../Pages/Login";
 import Modal from "../../../Modal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaShoppingCart } from "react-icons/fa"; // cart logo
 
 export const Card = (props) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 460);
   const [liked, setLiked] = useState(false);
   const [open, setOpen] = useState(false);
   const [login, setlogin] = useState(false);
@@ -23,6 +25,16 @@ export const Card = (props) => {
   let finalprice = qty * parseInt(shoesSize[size]);
   useEffect(() => {
     setsize(priceref.current.value);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 460);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const dispatch = useCartDispatch();
@@ -46,17 +58,20 @@ export const Card = (props) => {
 
   const HandleWishlist = async () => {
     try {
-      let response = await axios.post("https://shoesorbit-ecommerse-web-2.onrender.com/api/wishlist", {
-        user: localStorage.getItem("userEmail"),
-        id: props.cardShoesItem._id,
-        title: props.cardShoesItem.title,
-        image: props.cardShoesItem.image,
-        description: props.cardShoesItem.description,
-        qty: qty,
-        size: size,
-        price: finalprice,
-        date: new Date().toDateString(),
-      });
+      let response = await axios.post(
+        "https://shoesorbit-ecommerse-web-2.onrender.com/api/wishlist",
+        {
+          user: localStorage.getItem("userEmail"),
+          id: props.cardShoesItem._id,
+          title: props.cardShoesItem.title,
+          image: props.cardShoesItem.image,
+          description: props.cardShoesItem.description,
+          qty: qty,
+          size: size,
+          price: finalprice,
+          date: new Date().toDateString(),
+        }
+      );
       console.log(response.data);
     } catch (error) {}
   };
@@ -110,7 +125,7 @@ export const Card = (props) => {
 
         <img
           src={props.cardShoesItem.image}
-          className="card-img-top "
+          className=" card-img"
           alt={props.cardShoesItem.title}
         />
 
@@ -155,11 +170,16 @@ export const Card = (props) => {
                 <div>
                   <button
                     onClick={HandleAdd_to_Cart}
-                    className="btn btn-success btn-sm px-3"
+                    className="btn btn-success btn-sm px-3 d-flex align-items-center gap-1"
                   >
-                    Add To Cart
+                    {isMobile ? (
+                      <>
+                        Add <FaShoppingCart size={14} />
+                      </>
+                    ) : (
+                      "Add To Cart"
+                    )}
                   </button>
-                 
                 </div>
               ) : (
                 <>
