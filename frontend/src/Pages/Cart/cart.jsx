@@ -187,6 +187,7 @@ export default function Cart() {
               isOpen={open}
               onClose={() => setOpen(false)}
               onSuccess={() => {
+                
                 dispatch({ type: "DROP" });
                 setOpen(false);
               }}
