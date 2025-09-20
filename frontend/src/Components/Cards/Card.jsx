@@ -135,9 +135,9 @@ export const Card = (props) => {
             {/* {props.cardShoesItem.description} */}
           </p>
 
-          <div className="d-flex justify-content-between align-items-center ">
+          <div className="size-qty ">
             <select
-              className="form-select form-select-sm w-50 m-1  "
+              className="form-select form-select-sm w-5 m-1 "
               onChange={(e) => setqty(e.target.value)}
             >
               <option disabled selected>
@@ -151,7 +151,7 @@ export const Card = (props) => {
             </select>
 
             <select
-              className="form-select form-select-sm w-50 m-1"
+              className="form-select form-select-sm w-5 m-1 "
               ref={priceref}
               onChange={(e) => setsize(e.target.value)}
             >

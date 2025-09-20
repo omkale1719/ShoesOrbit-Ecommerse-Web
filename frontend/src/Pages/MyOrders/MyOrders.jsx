@@ -49,7 +49,7 @@ export const MyOrders = () => {
                         .map((product, idx) => (
                           <div key={idx} className="col-6 col-md-4 col-lg-3">
                             <div
-                              className="card mt-3 "
+                              className="card mt-3 new_card"
                               style={{ marginRight: "10px" }}
                             >
                               <img

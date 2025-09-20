@@ -1,6 +1,8 @@
 
 .container {
   margin-top: 30px;
+  
+
 }
 
 
@@ -22,6 +24,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   background-color: #fff;
+  
 }
 
 .card:hover {
@@ -40,6 +43,7 @@
 
 .card-body {
   padding: 12px 15px;
+  
 }
 
 .card-title {
@@ -60,4 +64,6 @@
   border-radius: 6px;
   font-weight: 500;
 }
+
+
 
